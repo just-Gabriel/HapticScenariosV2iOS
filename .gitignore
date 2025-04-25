@@ -1,0 +1,10 @@
+# === Xcode & macOS ===
+.DS_Store
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+DerivedData/
+build/
+.idea/
+*.swp
