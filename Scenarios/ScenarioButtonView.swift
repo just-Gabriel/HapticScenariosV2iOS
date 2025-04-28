@@ -15,23 +15,16 @@ struct ScenarioButtonView: View {
                     vibrationManager.playNextVibration()
                     navigateToSlider = true
                 }) {
-                    Text("Press")
-                        .font(.headline)
+                    Text("Bouton")
+                        .font(.system(size: 20, weight: .medium)) // ➔ un peu plus gros (20)
+                        .frame(minWidth: 240, minHeight: 60) // ➔ plus large et plus haut
+                        .background(Color(red: 1/255, green: 154/255, blue: 175/255)) 
                         .foregroundColor(.white)
-                        .frame(width: 220, height: 60)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color(red: 0, green: 0.78, blue: 1), Color.blue]),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .clipShape(Capsule())
-                        .overlay(Capsule().stroke(Color.gray, lineWidth: 2))
-                        .scaleEffect(isPressed ? 1.03 : 1)
-                        .shadow(color: Color.blue.opacity(0.3), radius: 8, x: 0, y: 6)
-                        .animation(.easeInOut(duration: 0.15), value: isPressed)
+                        .cornerRadius(16) // ➔ Arrondi doux
+                        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
                 }
+                .padding(.horizontal, 40)
+
 
                 Spacer()
             }
@@ -43,7 +36,6 @@ struct ScenarioButtonView: View {
                     }
                 }
             }
-            // 👇 Navigation vers SliderView avec la vibration actuelle
             .navigationDestination(isPresented: $navigateToSlider) {
                 SliderView(
                     vibrationId: vibrationManager.currentVibrationId,
@@ -58,4 +50,3 @@ struct ScenarioButtonView: View {
 #Preview {
     ScenarioButtonView()
 }
-

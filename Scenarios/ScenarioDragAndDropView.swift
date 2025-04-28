@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct ScenarioDragAndDropView: View {
-    @State private var offset = CGSize.zero
+    @State private var currentPosition: CGPoint = .zero
+    @State private var dragOffset: CGSize = .zero
     @State private var dropZoneFrame: CGRect = .zero
-    @State private var iconFrame: CGRect = .zero
+    @State private var fileFrame: CGRect = .zero
     @EnvironmentObject var vibrationManager: VibrationManager
 
     @State private var navigateToSlider = false
@@ -15,95 +16,58 @@ struct ScenarioDragAndDropView: View {
 
                 GeometryReader { geo in
                     ZStack {
+                        // 🎯 Zone de dépôt
                         VStack {
                             Spacer()
 
-                            // 🎯 Zone de dépôt bien centrée
-                            VStack {
-                                Image(systemName: "icloud.and.arrow.up")
-                                    .resizable()
-                                    .frame(width: 48, height: 48)
-                                    .foregroundColor(.gray)
-                                Text("Déposez ici")
-                                    .foregroundColor(.gray)
-                            }
-                            .frame(width: 200, height: 200)
-                            .background(Color(UIColor.systemGray5))
-                            .cornerRadius(16)
-                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 2))
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(Color(UIColor.systemGray5))
+                                .frame(width: 200, height: 200)
+                                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 2))
+                                .background(
+                                    GeometryReader { dropGeo in
+                                        Color.clear.onAppear {
+                                            dropZoneFrame = dropGeo.frame(in: .global)
+                                        }
+                                    }
+                                )
+
+                            Spacer()
+                        }
+
+                        // 📄 Fichier draggable
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.teal)
+                            .frame(width: 100, height: 100)
+                            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 2))
+                            .position(x: currentPosition.x + dragOffset.width, y: currentPosition.y + dragOffset.height)
                             .background(
-                                GeometryReader { geoDrop in
-                                    Color.clear.onAppear {
-                                        dropZoneFrame = geoDrop.frame(in: .global)
-                                        print("📦 Drop zone frame: \(dropZoneFrame)")
+                                GeometryReader { fileGeo in
+                                    Color.clear.onChange(of: dragOffset) { _, _ in
+                                        fileFrame = fileGeo.frame(in: .global)
                                     }
                                 }
                             )
 
-                            Spacer()
-                        }
-
-                        // 📄 Fichier draggable en haut à gauche (au-dessus)
-                        VStack {
-                            HStack {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color.teal)
-                                        .frame(width: 100, height: 100)
-                                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 2))
-                                        .shadow(radius: 4)
-
-                                    Image(systemName: "doc.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 40, height: 40)
-                                        .foregroundColor(.white)
-                                }
-                                .offset(offset)
-                                .background(
-                                    GeometryReader { geoIcon in
-                                        Color.clear.onAppear {
-                                            iconFrame = geoIcon.frame(in: .global)
-                                            print("📄 Initial icon frame: \(iconFrame)")
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        dragOffset = value.translation
+                                    }
+                                    .onEnded { _ in
+                                        if dropZoneFrame.intersects(fileFrame) {
+                                            print("✅ Déposé dans la zone !")
+                                            vibrationManager.playNextVibration()
+                                            navigateToSlider = true
+                                        } else {
+                                            print("❌ Pas dans la zone, retour...")
+                                            dragOffset = .zero
                                         }
                                     }
-                                )
-                                .gesture(
-                                    DragGesture()
-                                        .onChanged { value in
-                                            offset = value.translation
-                                            let iconCenter = CGPoint(
-                                                x: iconFrame.midX + value.translation.width,
-                                                y: iconFrame.midY + value.translation.height
-                                            )
-                                            print("🟡 Dragging - Icon center: \(iconCenter)")
-                                        }
-                                        .onEnded { value in
-                                            let iconCenter = CGPoint(
-                                                x: iconFrame.midX + value.translation.width,
-                                                y: iconFrame.midY + value.translation.height
-                                            )
-
-                                            print("🔵 Drag ended - Final icon center: \(iconCenter)")
-                                            print("📦 Drop zone frame: \(dropZoneFrame)")
-
-                                            if dropZoneFrame.contains(iconCenter) {
-                                                print("✅ Drop is inside the zone!")
-                                                vibrationManager.playNextVibration()
-                                                navigateToSlider = true
-                                            } else {
-                                                print("❌ Drop missed! Resetting position.")
-                                                offset = .zero
-                                            }
-                                        }
-                                )
-
-                                Spacer()
+                            )
+                            .onAppear {
+                                initializePosition(screenSize: geo.size)
                             }
-                            Spacer()
-                        }
-                        .padding(.top, 40)
-                        .padding(.leading, 20)
                     }
                     .frame(width: geo.size.width, height: geo.size.height)
                 }
@@ -117,4 +81,16 @@ struct ScenarioDragAndDropView: View {
             }
         }
     }
+
+    private func initializePosition(screenSize: CGSize) {
+        dragOffset = .zero
+        let corners = [
+            CGPoint(x: 80, y: 100), // haut gauche
+            CGPoint(x: screenSize.width - 80, y: 100), // haut droite
+            CGPoint(x: 80, y: screenSize.height - 100), // bas gauche
+            CGPoint(x: screenSize.width - 80, y: screenSize.height - 100) // bas droite
+        ]
+        currentPosition = corners.randomElement() ?? CGPoint(x: 80, y: 100)
+    }
 }
+

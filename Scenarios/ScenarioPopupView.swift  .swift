@@ -15,26 +15,27 @@ struct ScenarioPopupView: View {
                     Spacer()
 
                     if showPopup {
-                        VStack(spacing: 16) {
-                            Text("💬 Alerte")
-                                .font(.title2)
-                                .bold()
+                        VStack {
+                            HStack(alignment: .center, spacing: 12) {
+                                RoundedRectangle(cornerRadius: 6)
+                                    .fill(Color.purple)
+                                    .frame(width: 20, height: 20)
 
-                            Button(action: {
-                                showPopup = false
-                                navigateToSlider = true
-                            }) {
-                                Text("Continuer")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 200, height: 50)
-                                    .background(Color(red: 0.0, green: 0.776, blue: 1.0))
-                                    .clipShape(Capsule())
-                                    .overlay(
-                                        Capsule().stroke(Color.gray, lineWidth: 2)
-                                    )
-                                    .shadow(color: Color.gray.opacity(0.4), radius: 8, x: 0, y: 6)
+                                VStack(alignment: .leading, spacing: 8) {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .frame(width: 150, height: 10)
+
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.gray.opacity(0.3))
+                                        .frame(width: 200, height: 10)
+                                }
+                                Spacer()
                             }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(12)
+                            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
                         }
                         .padding()
                         .frame(width: UIScreen.main.bounds.width * 0.85, height: 200)
@@ -49,12 +50,15 @@ struct ScenarioPopupView: View {
                 .animation(.easeInOut(duration: 0.5), value: showPopup)
             }
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                     showPopup = true
                     vibrationManager.playNextVibration()
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        navigateToSlider = true
+                    }
                 }
             }
-            // Navigation vers les sliders
             .navigationDestination(isPresented: $navigateToSlider) {
                 SliderView(
                     vibrationId: vibrationManager.currentVibrationId,
