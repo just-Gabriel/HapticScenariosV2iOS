@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		01FBDBDF2DF06C6A0096FAAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01FBDBC62DF06C580096FAAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01FBDBCD2DF06C580096FAAC;
+			remoteInfo = HapticScenariosV2iOS;
+		};
+		01FBDBE92DF06C6B0096FAAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01FBDBC62DF06C580096FAAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01FBDBCD2DF06C580096FAAC;
+			remoteInfo = HapticScenariosV2iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01FBDBCE2DF06C580096FAAC /* HapticScenariosV2iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticScenariosV2iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01FBDBDE2DF06C6A0096FAAC /* HapticScenariosV2iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HapticScenariosV2iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01FBDBE82DF06C6B0096FAAC /* HapticScenariosV2iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HapticScenariosV2iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0148A9642DF0842900E8A63E /* Exceptions for "HapticScenariosV2iOSTests" folder in "HapticScenariosV2iOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Core/RealTestView.swift,
+				"Core/SliderView.swift  .swift",
+				Core/StartView.swift,
+				"Core/TestTermineView.swift  .swift",
+				Core/TrainingView.swift,
+				Core/UserFormView.swift,
+				HapticScenariosV2iOSApp.swift,
+				Scenarios/ScenarioButtonView.swift,
+				Scenarios/ScenarioDragAndDropView.swift,
+				"Scenarios/ScenarioPopupView.swift  .swift",
+				Utils/APIService.swift,
+				Utils/DataModels.swift,
+				"Utils/ScenarioVibration+UI.swift",
+				Utils/ScenarioViewModel.swift,
+				Utils/TrainingViewModel.swift,
+				Utils/VibrationManager.swift,
+			);
+			target = 01FBDBCD2DF06C580096FAAC /* HapticScenariosV2iOS */;
+		};
+		0148A9652DF0842900E8A63E /* Exceptions for "HapticScenariosV2iOSTests" folder in "HapticScenariosV2iOSTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Core/RealTestView.swift,
+				"Core/SliderView.swift  .swift",
+				Core/StartView.swift,
+				"Core/TestTermineView.swift  .swift",
+				Core/TrainingView.swift,
+				Core/UserFormView.swift,
+				HapticScenariosV2iOSApp.swift,
+				Scenarios/ScenarioButtonView.swift,
+				Scenarios/ScenarioDragAndDropView.swift,
+				"Scenarios/ScenarioPopupView.swift  .swift",
+				Utils/APIService.swift,
+				Utils/DataModels.swift,
+				"Utils/ScenarioVibration+UI.swift",
+				Utils/ScenarioViewModel.swift,
+				Utils/TrainingViewModel.swift,
+				Utils/VibrationManager.swift,
+			);
+			target = 01FBDBDD2DF06C6A0096FAAC /* HapticScenariosV2iOSTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		01FBDBE12DF06C6A0096FAAC /* HapticScenariosV2iOSTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0148A9642DF0842900E8A63E /* Exceptions for "HapticScenariosV2iOSTests" folder in "HapticScenariosV2iOS" target */,
+				0148A9652DF0842900E8A63E /* Exceptions for "HapticScenariosV2iOSTests" folder in "HapticScenariosV2iOSTests" target */,
+			);
+			path = HapticScenariosV2iOSTests;
+			sourceTree = "<group>";
+		};
+		01FBDBEB2DF06C6B0096FAAC /* HapticScenariosV2iOSUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HapticScenariosV2iOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01FBDBCB2DF06C580096FAAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01FBDBDB2DF06C6A0096FAAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01FBDBE52DF06C6B0096FAAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01FBDBC52DF06C580096FAAC = {
+			isa = PBXGroup;
+			children = (
+				01FBDBE12DF06C6A0096FAAC /* HapticScenariosV2iOSTests */,
+				01FBDBEB2DF06C6B0096FAAC /* HapticScenariosV2iOSUITests */,
+				01FBDBCF2DF06C580096FAAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01FBDBCF2DF06C580096FAAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01FBDBCE2DF06C580096FAAC /* HapticScenariosV2iOS.app */,
+				01FBDBDE2DF06C6A0096FAAC /* HapticScenariosV2iOSTests.xctest */,
+				01FBDBE82DF06C6B0096FAAC /* HapticScenariosV2iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01FBDBCD2DF06C580096FAAC /* HapticScenariosV2iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01FBDBF22DF06C6B0096FAAC /* Build configuration list for PBXNativeTarget "HapticScenariosV2iOS" */;
+			buildPhases = (
+				01FBDBCA2DF06C580096FAAC /* Sources */,
+				01FBDBCB2DF06C580096FAAC /* Frameworks */,
+				01FBDBCC2DF06C580096FAAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HapticScenariosV2iOS;
+			packageProductDependencies = (
+			);
+			productName = HapticScenariosV2iOS;
+			productReference = 01FBDBCE2DF06C580096FAAC /* HapticScenariosV2iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01FBDBDD2DF06C6A0096FAAC /* HapticScenariosV2iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01FBDBF52DF06C6B0096FAAC /* Build configuration list for PBXNativeTarget "HapticScenariosV2iOSTests" */;
+			buildPhases = (
+				01FBDBDA2DF06C6A0096FAAC /* Sources */,
+				01FBDBDB2DF06C6A0096FAAC /* Frameworks */,
+				01FBDBDC2DF06C6A0096FAAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01FBDBE02DF06C6A0096FAAC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				01FBDBE12DF06C6A0096FAAC /* HapticScenariosV2iOSTests */,
+			);
+			name = HapticScenariosV2iOSTests;
+			packageProductDependencies = (
+			);
+			productName = HapticScenariosV2iOSTests;
+			productReference = 01FBDBDE2DF06C6A0096FAAC /* HapticScenariosV2iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		01FBDBE72DF06C6B0096FAAC /* HapticScenariosV2iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01FBDBF82DF06C6B0096FAAC /* Build configuration list for PBXNativeTarget "HapticScenariosV2iOSUITests" */;
+			buildPhases = (
+				01FBDBE42DF06C6B0096FAAC /* Sources */,
+				01FBDBE52DF06C6B0096FAAC /* Frameworks */,
+				01FBDBE62DF06C6B0096FAAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01FBDBEA2DF06C6B0096FAAC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				01FBDBEB2DF06C6B0096FAAC /* HapticScenariosV2iOSUITests */,
+			);
+			name = HapticScenariosV2iOSUITests;
+			packageProductDependencies = (
+			);
+			productName = HapticScenariosV2iOSUITests;
+			productReference = 01FBDBE82DF06C6B0096FAAC /* HapticScenariosV2iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01FBDBC62DF06C580096FAAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					01FBDBCD2DF06C580096FAAC = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+					};
+					01FBDBDD2DF06C6A0096FAAC = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 01FBDBCD2DF06C580096FAAC;
+					};
+					01FBDBE72DF06C6B0096FAAC = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 01FBDBCD2DF06C580096FAAC;
+					};
+				};
+			};
+			buildConfigurationList = 01FBDBC92DF06C580096FAAC /* Build configuration list for PBXProject "HapticScenariosV2iOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01FBDBC52DF06C580096FAAC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 01FBDBCF2DF06C580096FAAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01FBDBCD2DF06C580096FAAC /* HapticScenariosV2iOS */,
+				01FBDBDD2DF06C6A0096FAAC /* HapticScenariosV2iOSTests */,
+				01FBDBE72DF06C6B0096FAAC /* HapticScenariosV2iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01FBDBCC2DF06C580096FAAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01FBDBDC2DF06C6A0096FAAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01FBDBE62DF06C6B0096FAAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01FBDBCA2DF06C580096FAAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01FBDBDA2DF06C6A0096FAAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01FBDBE42DF06C6B0096FAAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01FBDBE02DF06C6A0096FAAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01FBDBCD2DF06C580096FAAC /* HapticScenariosV2iOS */;
+			targetProxy = 01FBDBDF2DF06C6A0096FAAC /* PBXContainerItemProxy */;
+		};
+		01FBDBEA2DF06C6B0096FAAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01FBDBCD2DF06C580096FAAC /* HapticScenariosV2iOS */;
+			targetProxy = 01FBDBE92DF06C6B0096FAAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01FBDBF02DF06C6B0096FAAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01FBDBF12DF06C6B0096FAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01FBDBF32DF06C6B0096FAAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HapticScenariosV2iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 36SW5PPNPB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justgabriel.HapticScenariosV2iOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		01FBDBF42DF06C6B0096FAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HapticScenariosV2iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 36SW5PPNPB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justgabriel.HapticScenariosV2iOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		01FBDBF62DF06C6B0096FAAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36SW5PPNPB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justgabriel.HapticScenariosV2iOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HapticScenariosV2iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HapticScenariosV2iOS";
+			};
+			name = Debug;
+		};
+		01FBDBF72DF06C6B0096FAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36SW5PPNPB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justgabriel.HapticScenariosV2iOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HapticScenariosV2iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HapticScenariosV2iOS";
+			};
+			name = Release;
+		};
+		01FBDBF92DF06C6B0096FAAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36SW5PPNPB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justgabriel.HapticScenariosV2iOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HapticScenariosV2iOS;
+			};
+			name = Debug;
+		};
+		01FBDBFA2DF06C6B0096FAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36SW5PPNPB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justgabriel.HapticScenariosV2iOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HapticScenariosV2iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01FBDBC92DF06C580096FAAC /* Build configuration list for PBXProject "HapticScenariosV2iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01FBDBF02DF06C6B0096FAAC /* Debug */,
+				01FBDBF12DF06C6B0096FAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01FBDBF22DF06C6B0096FAAC /* Build configuration list for PBXNativeTarget "HapticScenariosV2iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01FBDBF32DF06C6B0096FAAC /* Debug */,
+				01FBDBF42DF06C6B0096FAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01FBDBF52DF06C6B0096FAAC /* Build configuration list for PBXNativeTarget "HapticScenariosV2iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01FBDBF62DF06C6B0096FAAC /* Debug */,
+				01FBDBF72DF06C6B0096FAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01FBDBF82DF06C6B0096FAAC /* Build configuration list for PBXNativeTarget "HapticScenariosV2iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01FBDBF92DF06C6B0096FAAC /* Debug */,
+				01FBDBFA2DF06C6B0096FAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01FBDBC62DF06C580096FAAC /* Project object */;
+}
