@@ -35,32 +35,6 @@ class APIService {
         return post(url: url, object: phone)
     }
 
-    // MARK: - Create EmotionalExperience
-    func postEmotionalExperience(_ experience: EmotionalExperience) -> AnyPublisher<Void, Error> {
-        let url = baseURL.appendingPathComponent("emotional_experiences")
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        do {
-            request.httpBody = try jsonEncoder.encode(experience)
-        } catch {
-            print("❌ Erreur d'encodage EmotionalExperience : \(error)")
-            return Fail(error: error).eraseToAnyPublisher()
-        }
-
-
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map { _ in () }
-            .mapError { $0 as Error } // ✅ conversion explicite de l'erreur
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
-
-
-
-    
-    
     // MARK: - Generic POST
     private func post<T: Codable>(url: URL, object: T) -> AnyPublisher<T, Error> {
         var request = URLRequest(url: url)

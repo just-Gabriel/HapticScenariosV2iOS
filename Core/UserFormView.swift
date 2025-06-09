@@ -9,9 +9,8 @@ import Foundation
 
 
 struct UserFormView: View {
-    @EnvironmentObject var viewModel: ScenarioViewModel
+    @EnvironmentObject var viewModel: ScenarioController
     @EnvironmentObject var vibrationManager: VibrationManager
-    
 
     // Champs utilisateur
     @State private var age = "25"

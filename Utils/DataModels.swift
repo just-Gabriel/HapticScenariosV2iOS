@@ -32,16 +32,3 @@ struct Telephone: Codable, Identifiable {
     var numeroModele: String
 }
 
-struct EmotionalExperience: Codable {
-    let user: String
-    let telephone: String
-    let slider1: Int
-    let slider2: Int
-    let slider3: Int
-    let slider4: Int
-    let slider5: Int
-    let scenario: String
-    let vibrationId: Int
-    let mobile: Int
-}
-
