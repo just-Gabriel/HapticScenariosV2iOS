@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01AA50932DF9A06C00665906 /* TestProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA50922DF9A06800665906 /* TestProgressController.swift */; };
 		01C110472DF6E97B0096A755 /* SliderView.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110432DF6E97B0096A755 /* SliderView.swift  .swift */; };
 		01C110482DF6E97B0096A755 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110442DF6E97B0096A755 /* StartView.swift */; };
 		01C110492DF6E97B0096A755 /* TestTermineView.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110452DF6E97B0096A755 /* TestTermineView.swift  .swift */; };
@@ -14,12 +15,13 @@
 		01C1104F2DF6E98D0096A755 /* ScenarioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C1104A2DF6E98D0096A755 /* ScenarioButtonView.swift */; };
 		01C110502DF6E98D0096A755 /* ScenarioPopupView.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C1104C2DF6E98D0096A755 /* ScenarioPopupView.swift  .swift */; };
 		01C110542DF6E9A30096A755 /* VibrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110522DF6E9A30096A755 /* VibrationManager.swift */; };
-		01C110552DF6E9A30096A755 /* ScenarioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110512DF6E9A30096A755 /* ScenarioController.swift */; };
 		01C110572DF6E9B80096A755 /* HapticScenariosV2iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110562DF6E9B80096A755 /* HapticScenariosV2iOSApp.swift */; };
 		01C110592DF7052B0096A755 /* ScenarioRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110582DF7052B0096A755 /* ScenarioRootView.swift */; };
 		01C1105D2DF706760096A755 /* UserFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C1105B2DF706760096A755 /* UserFormView.swift */; };
 		01C110602DF7072E0096A755 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C1105E2DF7072E0096A755 /* APIService.swift */; };
 		01C110612DF7072E0096A755 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C1105F2DF7072E0096A755 /* DataModels.swift */; };
+		01C110632DF7090D0096A755 /* ScenarioVibration+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110622DF709060096A755 /* ScenarioVibration+UI.swift */; };
+		01C110692DF721E20096A755 /* ScenarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C110682DF721DE0096A755 /* ScenarioViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,19 +42,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01AA50922DF9A06800665906 /* TestProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProgressController.swift; sourceTree = "<group>"; };
 		01C110432DF6E97B0096A755 /* SliderView.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SliderView.swift  .swift"; sourceTree = "<group>"; };
 		01C110442DF6E97B0096A755 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		01C110452DF6E97B0096A755 /* TestTermineView.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestTermineView.swift  .swift"; sourceTree = "<group>"; };
 		01C1104A2DF6E98D0096A755 /* ScenarioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioButtonView.swift; sourceTree = "<group>"; };
 		01C1104B2DF6E98D0096A755 /* ScenarioDragAndDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioDragAndDropView.swift; sourceTree = "<group>"; };
 		01C1104C2DF6E98D0096A755 /* ScenarioPopupView.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioPopupView.swift  .swift"; sourceTree = "<group>"; };
-		01C110512DF6E9A30096A755 /* ScenarioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioController.swift; sourceTree = "<group>"; };
 		01C110522DF6E9A30096A755 /* VibrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationManager.swift; sourceTree = "<group>"; };
 		01C110562DF6E9B80096A755 /* HapticScenariosV2iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticScenariosV2iOSApp.swift; sourceTree = "<group>"; };
 		01C110582DF7052B0096A755 /* ScenarioRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioRootView.swift; sourceTree = "<group>"; };
 		01C1105B2DF706760096A755 /* UserFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormView.swift; sourceTree = "<group>"; };
 		01C1105E2DF7072E0096A755 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		01C1105F2DF7072E0096A755 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		01C110622DF709060096A755 /* ScenarioVibration+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScenarioVibration+UI.swift"; sourceTree = "<group>"; };
+		01C110682DF721DE0096A755 /* ScenarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioViewModel.swift; sourceTree = "<group>"; };
 		01FBDBCE2DF06C580096FAAC /* HapticScenariosV2iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticScenariosV2iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FBDBDE2DF06C6A0096FAAC /* HapticScenariosV2iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HapticScenariosV2iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FBDBE82DF06C6B0096FAAC /* HapticScenariosV2iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HapticScenariosV2iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +124,9 @@
 		01C110532DF6E9A30096A755 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				01C110512DF6E9A30096A755 /* ScenarioController.swift */,
+				01AA50922DF9A06800665906 /* TestProgressController.swift */,
+				01C110682DF721DE0096A755 /* ScenarioViewModel.swift */,
+				01C110622DF709060096A755 /* ScenarioVibration+UI.swift */,
 				01C110522DF6E9A30096A755 /* VibrationManager.swift */,
 				01C1105F2DF7072E0096A755 /* DataModels.swift */,
 				01C1105E2DF7072E0096A755 /* APIService.swift */,
@@ -294,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C110692DF721E20096A755 /* ScenarioViewModel.swift in Sources */,
+				01C110632DF7090D0096A755 /* ScenarioVibration+UI.swift in Sources */,
 				01C110592DF7052B0096A755 /* ScenarioRootView.swift in Sources */,
 				01C110472DF6E97B0096A755 /* SliderView.swift  .swift in Sources */,
 				01C1104E2DF6E98D0096A755 /* ScenarioDragAndDropView.swift in Sources */,
@@ -302,9 +310,9 @@
 				01C1104F2DF6E98D0096A755 /* ScenarioButtonView.swift in Sources */,
 				01C110572DF6E9B80096A755 /* HapticScenariosV2iOSApp.swift in Sources */,
 				01C110502DF6E98D0096A755 /* ScenarioPopupView.swift  .swift in Sources */,
+				01AA50932DF9A06C00665906 /* TestProgressController.swift in Sources */,
 				01C1105D2DF706760096A755 /* UserFormView.swift in Sources */,
 				01C110542DF6E9A30096A755 /* VibrationManager.swift in Sources */,
-				01C110552DF6E9A30096A755 /* ScenarioController.swift in Sources */,
 				01C110482DF6E97B0096A755 /* StartView.swift in Sources */,
 				01C110492DF6E97B0096A755 /* TestTermineView.swift  .swift in Sources */,
 			);
@@ -467,7 +475,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HapticScenariosV2iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 36SW5PPNPB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -498,7 +505,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HapticScenariosV2iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 36SW5PPNPB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
