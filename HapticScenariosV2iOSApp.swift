@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct HapticScenariosV2iOSApp: App {
-    @StateObject var scenarioManager = ScenarioController() // 👈 c’est maintenant un ObservableObject
+    @StateObject var scenarioManager = ScenarioViewModel()
     @StateObject var vibrationManager = VibrationManager()
 
     var body: some Scene {
@@ -20,6 +20,7 @@ struct HapticScenariosV2iOSApp: App {
         }
     }
 }
+
 
 
 

@@ -1,9 +1,15 @@
 import SwiftUI
 
 struct ScenarioPopupView: View {
+    let onInteraction: () -> Void
+
     @State private var showPopup = false
-    @EnvironmentObject var vibrationManager: VibrationManager
     @State private var navigateToSlider = false
+    @State private var hasAppeared = false // ✅ Bloque le double appel
+    @State private var hasVibrated = false // ✅ Bloque la double vibration
+
+    @EnvironmentObject var vibrationManager: VibrationManager
+    @EnvironmentObject var scenarioManager: ScenarioViewModel
 
     var body: some View {
         NavigationStack {
@@ -15,34 +21,39 @@ struct ScenarioPopupView: View {
                     Spacer()
 
                     if showPopup {
-                        VStack {
-                            HStack(alignment: .center, spacing: 12) {
-                                RoundedRectangle(cornerRadius: 6)
-                                    .fill(Color.purple)
-                                    .frame(width: 20, height: 20)
+                        HStack(alignment: .center, spacing: 12) {
+                            RoundedRectangle(cornerRadius: 6)
+                                .fill(Color.purple)
+                                .frame(width: 20, height: 20)
 
-                                VStack(alignment: .leading, spacing: 8) {
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .fill(Color.gray.opacity(0.4))
-                                        .frame(width: 150, height: 10)
+                            VStack(alignment: .leading, spacing: 8) {
+                                RoundedRectangle(cornerRadius: 4)
+                                    .fill(Color.gray.opacity(0.4))
+                                    .frame(width: 150, height: 10)
 
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .fill(Color.gray.opacity(0.3))
-                                        .frame(width: 200, height: 10)
-                                }
-                                Spacer()
+                                RoundedRectangle(cornerRadius: 4)
+                                    .fill(Color.gray.opacity(0.3))
+                                    .frame(width: 200, height: 10)
                             }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(12)
-                            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+
+                            Spacer()
                         }
                         .padding()
-                        .frame(width: UIScreen.main.bounds.width * 0.85, height: 200)
                         .background(Color.white)
-                        .cornerRadius(16)
-                        .shadow(radius: 8)
-                        .transition(.asymmetric(insertion: .move(edge: .bottom).combined(with: .opacity), removal: .opacity))
+                        .cornerRadius(12)
+                        .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+                        .frame(maxWidth: 320)
+                        .transition(.asymmetric(insertion: .move(edge: .bottom).combined(with: .opacity),
+                                                removal: .opacity))
+                        .onAppear {
+                            // ✅ Appelé UNE SEULE FOIS au moment de l’apparition du popup
+                            if !hasVibrated {
+                                hasVibrated = true
+                                print("🔊 [POPUP] Vibration ID: \(vibrationManager.currentVibrationId)")
+                                scenarioManager.playCurrentTestVibration()
+                                onInteraction()
+                            }
+                        }
                     }
 
                     Spacer()
@@ -50,9 +61,13 @@ struct ScenarioPopupView: View {
                 .animation(.easeInOut(duration: 0.5), value: showPopup)
             }
             .onAppear {
+                guard !hasAppeared else { return }
+                hasAppeared = true
+
+                print("🪄 ScenarioPopupView lancé")
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                     showPopup = true
-                    vibrationManager.playNextVibration()
 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         navigateToSlider = true
@@ -60,17 +75,18 @@ struct ScenarioPopupView: View {
                 }
             }
             .navigationDestination(isPresented: $navigateToSlider) {
-                SliderView(
-                    vibrationId: vibrationManager.currentVibrationId,
-                    vibrationName: vibrationManager.currentVibrationName
-                )
-                .navigationBarBackButtonHidden(true)
+                SliderView(vibrationId: vibrationManager.currentVibrationId)
+                    .navigationBarBackButtonHidden(true)
+                    .onAppear {
+                        print("➡️ Navigation vers SliderView avec ID: \(vibrationManager.currentVibrationId)")
+                    }
             }
         }
     }
 }
 
 #Preview {
-    ScenarioPopupView()
+    ScenarioPopupView(onInteraction: {})
+        .environmentObject(VibrationManager())
+        .environmentObject(ScenarioViewModel())
 }
-

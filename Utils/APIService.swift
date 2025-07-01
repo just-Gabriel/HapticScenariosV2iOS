@@ -23,19 +23,31 @@ class APIService {
         return encoder
     }()
 
+    
     // MARK: - Create User
+    
     func createUser(_ user: User) -> AnyPublisher<User, Error> {
         let url = baseURL.appendingPathComponent("users")
         return post(url: url, object: user)
     }
 
     // MARK: - Create Telephone
+    
     func createTelephone(_ phone: Telephone) -> AnyPublisher<Telephone, Error> {
         let url = baseURL.appendingPathComponent("telephones")
         return post(url: url, object: phone)
     }
+    
+    // MARK: - Post EmotionalExperience
+    
+    func postEmotionalExperience(_ experience: EmotionalExperience) -> AnyPublisher<EmotionalExperience, Error> {
+        let url = baseURL.appendingPathComponent("emotional_experiences")
+        return post(url: url, object: experience)
+    }
+
 
     // MARK: - Generic POST
+    
     private func post<T: Codable>(url: URL, object: T) -> AnyPublisher<T, Error> {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

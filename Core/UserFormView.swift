@@ -1,18 +1,12 @@
-//
-//  UserFormView.swift
-//  HapticScenariosV2iOS
-//
-//  Created by AFLOKKAT_1 USER on 04/06/2025.
-//
 import SwiftUI
-import Foundation
-
+import Combine
 
 struct UserFormView: View {
-    @EnvironmentObject var viewModel: ScenarioController
+    var onFormSubmit: (User, Telephone) -> Void = { _, _ in }
+    
+    @EnvironmentObject var viewModel: ScenarioViewModel
     @EnvironmentObject var vibrationManager: VibrationManager
 
-    // Champs utilisateur
     @State private var age = "25"
     @State private var sexe = "Homme"
     @State private var mainDominante = "Droite"
@@ -24,7 +18,6 @@ struct UserFormView: View {
     @State private var isCoqueTelActive = false
     @State private var niveauInformatique: Float = 2
 
-    // Champs téléphone
     @State private var phoneBrand = "iOS"
     @State private var phoneModel = "iPhone 12"
     @State private var phoneVersion = "17"
@@ -32,21 +25,44 @@ struct UserFormView: View {
 
     @State private var isButtonEnabled = true
 
-    var onFormSubmit: () -> Void
-
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 Text("Formulaire utilisateur")
                     .font(.title2).bold()
+                    .padding(.bottom, 8)
 
                 Group {
-                    TextField("Âge", text: $age)
-                    TextField("Genre", text: $sexe)
-                    TextField("Nom du superviseur", text: $password)
-                    TextField("Pays de résidence", text: $paysResidence)
-                    TextField("Profession", text: $profession)
-                }.textFieldStyle(.roundedBorder)
+                    VStack(alignment: .leading) {
+                        Text("Âge")
+                        TextField("Âge", text: $age)
+                            .textFieldStyle(.roundedBorder)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text("Genre")
+                        TextField("Genre", text: $sexe)
+                            .textFieldStyle(.roundedBorder)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text("Nom du superviseur")
+                        TextField("Nom du superviseur", text: $password)
+                            .textFieldStyle(.roundedBorder)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text("Pays de résidence")
+                        TextField("Pays de résidence", text: $paysResidence)
+                            .textFieldStyle(.roundedBorder)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text("Profession")
+                        TextField("Profession", text: $profession)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                }
 
                 Text("Main dominante").bold()
                 Picker("Main dominante", selection: $mainDominante) {
@@ -64,24 +80,50 @@ struct UserFormView: View {
                     Slider(value: $niveauInformatique, in: 0...5, step: 1)
                 }
 
-                Divider()
+                Divider().padding(.vertical, 12)
 
-                Text("Téléphone personnel").font(.title3).bold()
+                Text("Informations sur le téléphone personnel")
+                    .font(.title3).bold()
+
                 Group {
-                    TextField("Système d’exploitation", text: $phoneBrand)
-                    TextField("Modèle", text: $phoneModel)
-                    TextField("Version logicielle", text: $phoneVersion)
-                    TextField("Numéro de modèle", text: $phoneModelNumber)
-                }.textFieldStyle(.roundedBorder)
+                    VStack(alignment: .leading) {
+                        Text("Système d’exploitation du téléphone")
+                        TextField("Système d’exploitation", text: $phoneBrand)
+                            .textFieldStyle(.roundedBorder)
+                    }
 
-                Button("Continuer") {
+                    VStack(alignment: .leading) {
+                        Text("Modèle téléphone")
+                        TextField("Modèle", text: $phoneModel)
+                            .textFieldStyle(.roundedBorder)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text("Version logicielle")
+                        TextField("Version", text: $phoneVersion)
+                            .textFieldStyle(.roundedBorder)
+                    }
+
+                    VStack(alignment: .leading) {
+                        Text("Numéro de modèle")
+                        TextField("Numéro de modèle", text: $phoneModelNumber)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                }
+
+                Button(action: {
                     isButtonEnabled = false
                     submitForm()
+                }) {
+                    Text("Continuer")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color(red: 1/255, green: 154/255, blue: 175/255))
+                        .cornerRadius(8)
                 }
                 .disabled(!isButtonEnabled)
                 .padding(.top, 24)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
             }
             .padding()
         }
@@ -101,7 +143,7 @@ struct UserFormView: View {
             niveauInformatique: Int(niveauInformatique)
         )
 
-        let telephone = Telephone(
+        let phone = Telephone(
             marque: phoneBrand,
             modele: phoneModel,
             versionLogiciel: phoneVersion,
@@ -109,22 +151,25 @@ struct UserFormView: View {
         )
 
         APIService.shared.createUser(user)
-            .flatMap { savedUser in
+            .flatMap { savedUser -> AnyPublisher<Telephone, Error> in
                 viewModel.user = savedUser
-                return APIService.shared.createTelephone(telephone)
+                return APIService.shared.createTelephone(phone)
             }
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
-                    print("❌ Échec formulaire : \(error.localizedDescription)")
-                    isButtonEnabled = true
+                    print("❌ Erreur : \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        isButtonEnabled = true
+                    }
                 }
             }, receiveValue: { savedPhone in
                 viewModel.telephone = savedPhone
-                viewModel.reset()
-                viewModel.initialize(vibrationManager: vibrationManager)
-                onFormSubmit()
+                viewModel.setVibrationManager(vibrationManager)
+                viewModel.initializeAllTests()
+
+                print("✅ Form POST réussi — début onFormSubmit()")
+                onFormSubmit(viewModel.user!, savedPhone)
             })
             .store(in: &viewModel.cancellables)
     }
 }
-
