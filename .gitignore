@@ -1,10 +1,42 @@
-# === Xcode & macOS ===
+# macOS
 .DS_Store
+
+# Xcode
 *.xcuserstate
-*.xcworkspace
-*.xcodeproj/project.xcworkspace/
-*.xcodeproj/xcuserdata/
+*.xcuserdatad/
+xcuserdata/
+
+# On GARDE le .xcworkspace (utile pour CocoaPods/SPM)
+# et les dossiers partagés de project.xcworkspace (schemes, Package.resolved)
+# donc ne pas les ignorer !
+
+# Build artifacts
 DerivedData/
 build/
+
+# IDE
 .idea/
 *.swp
+
+# CocoaPods
+Pods/
+Podfile.lock
+Podfile
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+.swiftpm/
+# On garde Package.resolved (important pour figer les versions)
+# donc pas d’exclusion de celui-là
+
+# Secrets / certificats (ne jamais commit)
+*.p12
+*.mobileprovision
+*.cer
+*.key
+
+# Config privées – fournir un template
+*.xcconfig
+.env
