@@ -19,7 +19,8 @@ class TestProgressController: ObservableObject {
     @Published private(set) var completedTraining = 0
     @Published private(set) var completedReal = 0
     
-    let totalTraining = 14
+    //let totalTraining = 14
+    let totalTraining = 10
     let totalReal = 84
 
     private(set) var isTraining = true

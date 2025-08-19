@@ -23,9 +23,9 @@ struct ScenarioPopupView: View {
                     if showPopup {
                         HStack(alignment: .center, spacing: 12) {
                             RoundedRectangle(cornerRadius: 6)
-                                .fill(Color.purple)
+                                .fill(Color(red: 1/255, green: 154/255, blue: 175/255))
                                 .frame(width: 20, height: 20)
-
+                            
                             VStack(alignment: .leading, spacing: 8) {
                                 RoundedRectangle(cornerRadius: 4)
                                     .fill(Color.gray.opacity(0.4))

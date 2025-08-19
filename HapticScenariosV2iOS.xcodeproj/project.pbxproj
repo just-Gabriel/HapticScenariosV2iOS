@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		015F4AA52E54AEA7000AF5F6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		01AA50922DF9A06800665906 /* TestProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProgressController.swift; sourceTree = "<group>"; };
 		01C110432DF6E97B0096A755 /* SliderView.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SliderView.swift  .swift"; sourceTree = "<group>"; };
 		01C110442DF6E97B0096A755 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		01FBDBC52DF06C580096FAAC = {
 			isa = PBXGroup;
 			children = (
+				015F4AA52E54AEA7000AF5F6 /* .gitignore */,
 				01C110582DF7052B0096A755 /* ScenarioRootView.swift */,
 				01C110562DF6E9B80096A755 /* HapticScenariosV2iOSApp.swift */,
 				01C110532DF6E9A30096A755 /* Utils */,

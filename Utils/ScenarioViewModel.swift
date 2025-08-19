@@ -45,9 +45,9 @@ class ScenarioViewModel: ObservableObject {
         }
 
         let scenarios = (
-            Array(repeating: ScenarioType.button, count: 5) +
+            Array(repeating: ScenarioType.button, count: 3) +
             Array(repeating: ScenarioType.popup, count: 4) +
-            Array(repeating: ScenarioType.dragAndDrop, count: 5)
+            Array(repeating: ScenarioType.dragAndDrop, count: 3)
         ).shuffled()
 
         let result = zip(vibrationIds, scenarios).map {
